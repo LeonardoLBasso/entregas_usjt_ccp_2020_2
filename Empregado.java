@@ -1,5 +1,3 @@
-import java.lang.reflect.Constructor;
-
 public class Empregado {
     private String nome;
     private int idade;
@@ -7,8 +5,10 @@ public class Empregado {
     private double salary;
     private double bonus;
     private double comission;
+	static final int calcComission = 45 * 400;
 
-    public Empregado (String nome, int idade, int tipo, double salary, double bonus, double comission){
+    public Empregado (final String nome, final int idade, final int tipo, final double salary, final double bonus,
+            final double comission) {
         this.nome = nome;
         this.idade = idade;
         this.tipo = tipo;
@@ -25,12 +25,44 @@ public class Empregado {
         return nome;
     }
 
-    public void setIdade(int idade) {
+    public double getBonus() {
+        return bonus;
+    }
+
+    public double getComission() {
+        return comission;
+    }
+
+    public double getSalary() {
+        return salary;
+    }
+
+    public int getTipo() {
+        return tipo;
+    }
+
+    public void setIdade(final int idade) {
         this.idade = idade;
     }
 
-    public void setNome(String nome) {
+    public void setNome(final String nome) {
         this.nome = nome;
+    }
+
+    public void setBonus(final double bonus) {
+        this.bonus = bonus;
+    }
+
+    public void setComission(final double comission) {
+        this.comission = comission;
+    }
+
+    public void setSalary(final double salary) {
+        this.salary = salary;
+    }
+
+    public void setTipo(final int tipo) {
+        this.tipo = tipo;
     }
 
     public double calcSalary() {
